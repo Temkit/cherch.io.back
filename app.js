@@ -1,6 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const searchEngine = require("./channel");
+var net = require("net");
+var server = net.createServer();
 
 var cors = require("cors");
 const app = express();
@@ -24,6 +26,15 @@ app.use(bodyParser.json());
 const routes = require("./routes");
 app.use("/yet/api", routes);
 
-app.listen(3000, () => {
-  console.log(`http://localhost:3000`);
+server.once("error", function(err) {
+  if (err.code === "EADDRINUSE") {
+    console.log(`Already in use`);
+  }
+});
+
+server.once("listening", () => {
+  app.listen(3000, () => {
+    console.log(`http://localhost:3000`);
+  });
+  server.close();
 });

@@ -5,7 +5,7 @@
   "main": "channel.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./scripts/run.sh"
+    "start": "./scripts/run.sh && pm2 start app.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +14,7 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "net": "^1.0.2",
     "portfinder": "^1.0.25",
     "sonic-channel": "^1.2.6"
   }

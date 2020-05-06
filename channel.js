@@ -11,8 +11,8 @@ module.exports = {
   ingest: (collection, bucket, lang, id, text) =>
     Injest.add(collection, bucket, lang, id, text),
   remove: (collection, bucket, id) => Injest.remove(collection, bucket, id),
-  search: (collection, bucket, lang, term) =>
-    Search.start(collection, bucket, lang, term),
+  search: (collection, bucket, lang, term, limit) =>
+    Search.start(collection, bucket, lang, term, limit),
   suggest: (collection, bucket, lang, term) =>
-    Search.suggest(collection, bucket, lang, term)
+    Search.suggest(collection, bucket, lang, term),
 };

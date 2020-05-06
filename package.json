@@ -5,7 +5,7 @@
   "main": "channel.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./scripts/run.sh && pm2 start app.js"
+    "start": "./scripts/run.sh && node app.js"
   },
   "keywords": [],
   "author": "",

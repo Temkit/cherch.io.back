@@ -6,7 +6,7 @@ var schControl, schInjest, schSearch;
 var credential = {
   host: "::1",
   port: 1491,
-  auth: "SecretPassword"
+  auth: "SecretPassword",
 };
 
 const Config = {
@@ -16,7 +16,9 @@ const Config = {
   sonicChannelIngest: schInjest
     ? schInjest
     : new SonicChannelIngest(credential),
-  sonicChannelSearch: schSearch ? schSearch : new SonicChannelSearch(credential)
+  sonicChannelSearch: schSearch
+    ? schSearch
+    : new SonicChannelSearch(credential),
 };
 
 module.exports = Config;

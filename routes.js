@@ -8,7 +8,8 @@ router.get("/search", (req, res, next) => {
       req.query.user,
       req.query.database,
       req.query.lang,
-      req.query.keyword
+      req.query.keyword,
+      req.query.limit
     )
     .then((result, err) => {
       if (err) {
